@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block titulo %} Product list {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'create' %}" role="button">Add BbCategoriesImport</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">BbCategoriesImport </h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Productid</th>
+                    <th>Detailid</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.productid }}</td>
+                    <td>{{ product.detailid }}</td>
+                    <td>{{ product.name }}</td>
+                    
+                   
+                    <td> 
+                        <a name="" id="" class="btn btn-info" href="{% url 'edit' product.id %}" role="button">Edit</a> 
+                        | 
+                        <a name="" id="" class="btn btn-danger" href="{% url 'eliminate' product.id %}" role="button">Eliminate</a> 
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+    {% endblock %}

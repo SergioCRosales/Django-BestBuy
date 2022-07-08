@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block titulo %} Welcome {% endblock %}
+
+{% block contenido %} 
+
+<div class="p-5 bg-light">
+    <div class="container">
+        <h1 class="display-3">Welcome to system</h1>
+        <p class="lead">Press the button to enter a product</p>
+        <hr class="my-2">
+       
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'create' %}" role="button">Enter product</a>
+        </p>
+    </div>
+</div>
+
+    {% endblock %}
